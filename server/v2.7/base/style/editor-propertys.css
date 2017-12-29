@@ -1,0 +1,106 @@
+/*
+ *
+ * Server initial configure style propertys
+ * written by jonas wesley.
+ */
+
+/* box server initial configuration */
+#box-server-initial-configuration {
+    position: relative;
+    width: 50%;
+    left: 25%;
+    padding: 5px;
+    
+    background-color: #484551;
+    border: 1px solid #333239;
+    font:10pt Helvetica;
+    color:white;
+}
+
+/* first title  */
+
+.text-title-1 {
+    font: 12pt Helvetica;
+    color:white;
+}
+
+/*
+ *
+ * Editor style propertys 
+ *
+ */
+
+/* body/html style options */
+body {
+    background-color: #25252A;
+}
+
+/* table style propertys */
+
+.table-tables {
+    border: 1px solid #333239;
+}
+
+.table-rows td {
+    border: 1px solid #333239;
+}
+
+td {
+    font:11pt Helvetica;
+    color:white;
+} td a {
+    font:11pt Helvetica;
+    color:skyBlue;
+    text-decoration: none;
+    cursor: pointer;
+} td a:hover {
+    color:red;
+}
+
+/* box editor menu */
+
+#box-editor-menu {
+    position: relative;
+    
+    padding:5px;
+    background-color: #484551;
+    font: 11pt Helvetica;
+    border: 1px solid #333239;
+    border-radius: 0.2em;
+    color: white;
+}
+
+/* box editor link */
+
+.box-editor-link {
+    text-decoration: none;
+    font:11pt Helvetica;
+    color: white;
+    padding:3px;
+    border: 1px solid #484551;
+} .box-editor-link:hover {
+    border: 1px solid #333239;
+    border-radius: 0.2em;
+    background-color: #25252A;
+    cursor: pointer;
+} .box-editor-selected {
+    border: 1px solid #333239;
+    border-radius: 0.2em;
+    background-color: #25252A;
+    cursor: pointer;
+}
+
+/* box editor panel */
+
+#box-editor-panel {
+    position: relative;
+    width: auto;
+    height:550px;
+    padding:5px;
+    
+    background-color: #484551;
+    border: 1px solid #484551;
+    border-radius: 0.2em;
+    
+    overflow-y: auto;
+}
