@@ -68,7 +68,7 @@ if(file_exists("res/server-config/server-config.php")) {
                           </span>-->
                         </div>
                     </td>
-                    <td width='40%'>
+                    <td width='35%'>
                         
                     </td>
                     <td>
@@ -76,7 +76,9 @@ if(file_exists("res/server-config/server-config.php")) {
                           <span class='box-editor-link' id=''>
                             settings
                           </span>
-                          
+                          <span class='box-editor-link' id='' onclick="top.location.href='logout.php'">
+                            logout
+                          </span>
                         </div>
                     </td>
                 </tr>
