@@ -72,7 +72,7 @@ if(!file_exists("res/server-config/server-config.php")) {
                     
         fwrite($file, $pre_file);
         fclose($file);
-        //header("location: main.php");
+        echo "<script>href.location='login.php';</script>";
         
       } else {
         
