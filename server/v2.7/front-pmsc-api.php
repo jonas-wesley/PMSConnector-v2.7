@@ -21,7 +21,7 @@
  */
 
 # no error messages
-  //error_reporting(0);
+  error_reporting(0);
   
  const POST = 'post';
  const GET = 'get';
