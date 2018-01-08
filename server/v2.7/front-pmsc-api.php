@@ -2,7 +2,7 @@
 
 /*
  * Php mysql connector API to server connections with godot
- * revised version on 30/11/2017 | date of next version 01/01/2018
+ * revised version on 30/11/2017 
  * written by jonas wesley, Version 2.7
  * 
  * "Everything can connect, everything can be connected."
