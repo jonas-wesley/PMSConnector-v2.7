@@ -3,12 +3,16 @@
 if(!file_exists("res/server-config/server-config.php")) {
     
    if(getenv("REQUEST_METHOD")=="POST") {
-      
+      # generate this on 
+      $crypt_salt = uniqid(mt_rand(), true);
+	  
       # erros
       $error = 0;
       $msg = "is empty...";
       
       if(empty($_POST['server-database-host'])) {
+        $error = 1;
+      } elseif(empty($_POST['server-database-port'])) {
         $error = 1;
       } elseif(empty($_POST['server-database-name'])) {
         $error = 1;
@@ -30,6 +34,10 @@ if(!file_exists("res/server-config/server-config.php")) {
       }
       
       if($error == 0) {
+       # make the folder if not exists
+        if (!file_exists('res/server-config/')) {
+          mkdir('res/server-config/', 0777, true);
+        }
         
         # create and open file of config this server
         $file = fopen("res/server-config/server-config.php","a+");
@@ -38,13 +46,14 @@ if(!file_exists("res/server-config/server-config.php")) {
         $pre_file = "";
         
         $server_database_host = $_POST['server-database-host'];
+        $server_database_port = $_POST['server-database-port'];
         $server_database_name = $_POST['server-database-name'];
         $server_database_user = $_POST['server-database-user-name'];
         $server_database_pass = $_POST['server-database-user-pass'];
         $server_admin_pass = $_POST['server-admin-pass-1'];
         
         $key = "version2.7PMSConnectorANdIMS";
-        $key = crypt("$key");
+        $key = crypt("$key", $crypt_salt);
         $key = strtr($key,"\$","cif");
         
         $pre_file = "
@@ -53,6 +62,9 @@ if(!file_exists("res/server-config/server-config.php")) {
                     
                     # server database host
                       \$server_database_host = \"$server_database_host\";
+					  
+                    # server database port
+                      \$server_database_port = \"$server_database_port\";
                       
                     # server database name
                       \$server_database_name = \"$server_database_name\";
@@ -72,6 +84,7 @@ if(!file_exists("res/server-config/server-config.php")) {
                     
         fwrite($file, $pre_file);
         fclose($file);
+
         echo "<script>href.location='login.php';</script>";
         
       } else {
@@ -131,6 +144,16 @@ if(!file_exists("res/server-config/server-config.php")) {
                         <td>
                             
                             <input type='text' name='server-database-host' value='localhost'>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            database port:
+                        </td>
+                        <td>
+                            
+                            <input type='text' name='server-database-port' value='3306'>
                             
                         </td>
                     </tr>

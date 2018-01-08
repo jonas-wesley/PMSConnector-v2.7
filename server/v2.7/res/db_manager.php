@@ -5,7 +5,7 @@ include "db-manager/db-manager.php";
 
  $db_manager = new DBManager();
  $_connection = "";
- $result = $db_manager->db_manager_connect("$server_database_host","$server_database_user","$server_database_pass","$server_database_name");
+ $result = $db_manager->db_manager_connect("$server_database_host","$server_database_user","$server_database_pass","$server_database_name","$server_database_port");
  
  if(!$result) {
     

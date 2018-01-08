@@ -2,10 +2,10 @@
 
 class DBManager  {
     
-   public function db_manager_connect($host,$user,$pass,$dbname) {
+   public function db_manager_connect($host,$user,$pass,$dbname,$port=3306) {
         
         /* new mysqli connection */
-        $_connection = new mysqli($host,$user,$pass,$dbname);
+        $_connection = new mysqli($host,$user,$pass,$dbname,$port);
         
         if(mysqli_connect_errno()) {
             
