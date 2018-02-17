@@ -50,11 +50,7 @@ class PMSCEmail {
         
        $result =  mail($to, $subject, $msg, $headers);
         
-        if ($result == true) {
-            return true;
-        } else {
-            return false;
-        }
+       return $result;
     }
     
     
